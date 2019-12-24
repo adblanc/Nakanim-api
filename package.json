@@ -1,0 +1,34 @@
+{
+  "name": "nakanim-api-wrapper",
+  "version": "1.0.0",
+  "description": "This is a node.js wrapper to use nakanim.com API.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "prepublish": "tsc",
+  "scripts": {
+    "start": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adblanc/Nakanim-api-wrapper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adblanc/Nakanim-api-wrapper/issues"
+  },
+  "homepage": "https://github.com/adblanc/Nakanim-api-wrapper#readme",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.0",
+    "@types/node-fetch": "^2.5.4",
+    "ts-node": "^8.5.4",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.4"
+  }
+}
