@@ -1,4 +1,5 @@
 {
   "apiUrl": "http://www.nakanim.com/api",
-  "apiCalendarUrl": "http://www.nakanim.com/api/calendar"
+  "apiCalendarUrl": "http://www.nakanim.com/api/calendar",
+  "apiAnimesUrl": "http://www.nakanim.com/api/animes"
 }
