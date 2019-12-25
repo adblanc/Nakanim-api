@@ -1,4 +1,2 @@
-import getCalendar from "./calendar";
-import { getAllAnimes, getAnime, getRandomAnime } from "./animes";
-
-export { getCalendar, getAllAnimes, getAnime, getRandomAnime };
+export * from "./animes";
+export * from "./calendar";

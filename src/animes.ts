@@ -2,12 +2,12 @@ import fetch from "node-fetch";
 import { apiAnimesUrl, apiRandomAnimesUrl } from "../config.json";
 import moment = require("moment");
 
-interface Genre {
+export interface Genre {
   _id: string;
   name: string;
 }
 
-interface Anime {
+export interface Anime {
   ref: string[];
   _id: string;
   name: string;
@@ -28,7 +28,7 @@ interface Anime {
   genres: Genre[];
 }
 
-interface RandomAnime {
+export interface RandomAnime {
   _id: string;
   date: string;
   anime: Anime;

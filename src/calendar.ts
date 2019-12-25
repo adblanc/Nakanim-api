@@ -2,13 +2,29 @@ import fetch from "node-fetch";
 import moment from "moment";
 import { apiCalendarUrl, calendarFormat as format } from "../config.json";
 
-interface Calendar {
-  startDate: string;
-  endDate: string;
-  days: object[];
+export interface Episode {
+  ref: string[];
+  _id: string;
+  hour: string;
+  title: string;
+  number: string | number;
+  link: string;
+  image: string;
 }
 
-export default async function(startDate?: string): Promise<Calendar> {
+export interface Day {
+  _id?: string;
+  date: string;
+  episodes: Episode[];
+}
+
+export interface Calendar {
+  startDate: string;
+  endDate: string;
+  days: Day[];
+}
+
+export async function getCalendar(startDate?: string): Promise<Calendar> {
   const monday = moment()
     .isoWeekday(1)
     .format(format);
