@@ -1,10 +1,14 @@
 import fetch from "node-fetch";
 import moment from "moment";
-import { apiCalendarUrl } from "../config.json";
+import { apiCalendarUrl, calendarFormat as format } from "../config.json";
 
-const format = "YYYY-MM-DD";
+interface Calendar {
+  startDate: string;
+  endDate: string;
+  days: object[];
+}
 
-export default async function(startDate?: string): Promise<object> {
+export default async function(startDate?: string): Promise<Calendar> {
   const monday = moment()
     .isoWeekday(1)
     .format(format);
@@ -15,12 +19,9 @@ export default async function(startDate?: string): Promise<object> {
     return await res.json();
   } catch (ex) {
     console.error("Error fetching nakanim calendar : ", ex);
-    const sunday = moment()
-      .isoWeekday(7)
-      .format(format);
     return {
-      startDate: monday,
-      endDate: sunday,
+      startDate: "",
+      endDate: "",
       days: []
     };
   }
