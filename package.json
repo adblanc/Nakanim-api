@@ -7,12 +7,13 @@
   "files": [
     "dist/*"
   ],
-  "prepublish": "tsc",
   "scripts": {
+    "prepublishOnly": "tsc",
     "start": "ts-node-dev --respawn src/index.ts",
     "build": "tsc",
     "test": "jest",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "createPackage": "tsc && npm pack"
   },
   "repository": {
     "type": "git",

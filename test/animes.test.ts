@@ -1,4 +1,4 @@
-import { getAllAnimes, getAnime, getRandomAnime } from "../src/animes";
+import { getAllAnimes, getAnime, getRandomAnime } from "../src/";
 
 describe("animes", () => {
   jest.setTimeout(30000);

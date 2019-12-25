@@ -1,6 +1,4 @@
 import getCalendar from "./calendar";
+import { getAllAnimes, getAnime, getRandomAnime } from "./animes";
 
-(async () => {
-  const calendar = await getCalendar();
-  console.log(calendar);
-})();
+export { getCalendar, getAllAnimes, getAnime, getRandomAnime };

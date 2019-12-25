@@ -1,5 +1,5 @@
 import moment from "moment";
-import getCalendar from "../src/calendar";
+import { getCalendar } from "../src/";
 import { calendarFormat as format } from "../config.json";
 
 describe("getCalendar", () => {
