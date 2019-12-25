@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
-import { apiAnimesUrl } from "../config.json";
+import { apiAnimesUrl, apiRandomAnimesUrl } from "../config.json";
+import moment = require("moment");
 
 interface Genre {
   _id: string;
@@ -25,6 +26,12 @@ interface Anime {
   extraInfos?: string;
   __v?: number;
   genres: Genre[];
+}
+
+interface RandomAnime {
+  _id: string;
+  date: string;
+  anime: Anime;
 }
 
 export async function getAllAnimes(): Promise<Anime[]> {
@@ -53,6 +60,31 @@ export async function getAnime(id: string | number): Promise<Anime> {
       img: "",
       synopsis: "",
       genres: []
+    };
+  }
+}
+
+export async function getRandomAnime(date?: string): Promise<RandomAnime> {
+  const day = date || moment().format("DD/MM/YYYY");
+  try {
+    const res = await fetch(`${apiRandomAnimesUrl}?date=${day}`);
+    return await res.json();
+  } catch (ex) {
+    console.error(`Error while fetching RandomAnime : `, ex);
+    return {
+      _id: "0",
+      date: day,
+      anime: {
+        ref: [""],
+        _id: "0",
+        name: "",
+        link: "",
+        rating: 0,
+        episodes: 0,
+        img: "",
+        synopsis: "",
+        genres: []
+      }
     };
   }
 }
