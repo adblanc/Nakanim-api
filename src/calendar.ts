@@ -10,6 +10,7 @@ export interface Episode {
   number: string | number;
   link: string;
   image: string;
+  image2x?: string;
 }
 
 export interface Day {
