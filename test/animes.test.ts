@@ -7,7 +7,7 @@ describe("animes", () => {
     it("should return an array of animes if everything ok", async () => {
       const res = await getAllAnimes();
       expect(res.length).toBeGreaterThan(0);
-      res.forEach(anime =>
+      res.forEach((anime) =>
         expect(Object.keys(anime)).toMatchObject(
           expect.arrayContaining([
             "ref",
@@ -17,7 +17,7 @@ describe("animes", () => {
             "rating",
             "episodes",
             "img",
-            "synopsis"
+            "synopsis",
           ])
         )
       );
@@ -37,7 +37,7 @@ describe("animes", () => {
           "rating",
           "episodes",
           "img",
-          "synopsis"
+          "synopsis",
         ])
       );
     });
@@ -70,7 +70,7 @@ describe("animes", () => {
           "rating",
           "episodes",
           "img",
-          "synopsis"
+          "synopsis",
         ])
       );
     });
@@ -89,7 +89,7 @@ describe("animes", () => {
           "rating",
           "episodes",
           "img",
-          "synopsis"
+          "synopsis",
         ])
       );
     });

@@ -37,7 +37,9 @@ export interface RandomAnime {
 export async function getAllAnimes(): Promise<Anime[]> {
   try {
     const res = await fetch(`${apiAnimesUrl}`);
-    return await res.json();
+    const { result } = await res.json();
+
+    return result;
   } catch (ex) {
     console.error("Error while fetching all animes : ", ex);
     return [];
@@ -59,7 +61,7 @@ export async function getAnime(id: string | number): Promise<Anime> {
       episodes: 0,
       img: "",
       synopsis: "",
-      genres: []
+      genres: [],
     };
   }
 }
@@ -83,8 +85,8 @@ export async function getRandomAnime(date?: string): Promise<RandomAnime> {
         episodes: 0,
         img: "",
         synopsis: "",
-        genres: []
-      }
+        genres: [],
+      },
     };
   }
 }

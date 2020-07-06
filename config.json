@@ -1,7 +1,7 @@
 {
   "apiUrl": "http://www.nakanim.com/api",
   "apiCalendarUrl": "http://www.nakanim.com/api/calendar",
-  "apiAnimesUrl": "http://www.nakanim.com/api/animes",
+  "apiAnimesUrl": "http://www.nakanim.com/api/anime",
   "apiRandomAnimesUrl": "http://www.nakanim.com/api/random",
   "calendarFormat": "YYYY-MM-DD"
 }
